@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Conference Event Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 32px 24px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2d3e50;
+      margin-bottom: 24px;
+      font-size: 1.7em;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      color: #34495e;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 18px;
+      border: 1px solid #ccd6dd;
+      border-radius: 4px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+
+    input:focus, select:focus {
+      border-color: #2980b9;
+      outline: none;
+    }
+
+    .error {
+      color: #e74c3c;
+      font-size: 0.95em;
+      margin-bottom: 10px;
+      display: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #2980b9;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1em;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #21618c;
+    }
+
+    #confirmationMessage {
+      display: none;
+      text-align: center;
+      font-size: 1.2em;
+      color: #2d7a2d;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="formTitle">Event Registration</h1>
+
+    <div id="confirmationMessage">✅ Registration completed successfully!</div>
+
+    <form id="registrationForm" aria-labelledby="formTitle" novalidate>
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" aria-required="true" required autocomplete="name" />
+        <div class="error" id="nameError">Please enter your name.</div>
+      </div>
+
+      <div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" aria-required="true" required autocomplete="email" />
+        <div class="error" id="emailError">Please enter a valid email address.</div>
+      </div>
+
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" aria-required="true" required autocomplete="tel" pattern="^\d{10}$" aria-describedby="phoneHelp" />
+        <div id="phoneHelp" style="font-size:0.9em;color:#888;margin-bottom:6px;">Format: 10 digits (e.g. 1234567890)</div>
+        <div class="error" id="phoneError">Please enter a valid 10-digit phone number.</div>
+      </div>
+
+      <div>
+        <label for="session">Session Selection</label>
+        <select id="session" name="session" aria-required="true" required>
+          <option value="">-- Select a session --</option>
+          <option value="keynote">Keynote Speech</option>
+          <option value="workshop1">Workshop: AI Trends</option>
+          <option value="workshop2">Workshop: Cloud Computing</option>
+          <option value="panel">Panel Discussion</option>
+        </select>
+        <div class="error" id="sessionError">Please select a session.</div>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+
+      // Name validation
+      const name = document.getElementById('name');
+      const nameError = document.getElementById('nameError');
+      if (name.value.trim() === '') {
+        nameError.style.display = 'block';
+        name.setAttribute('aria-invalid', 'true');
+        valid = false;
+      } else {
+        nameError.style.display = 'none';
+        name.removeAttribute('aria-invalid');
+      }
+
+      // Email validation
+      const email = document.getElementById('email');
+      const emailError = document.getElementById('emailError');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email.value.trim())) {
+        emailError.style.display = 'block';
+        email.setAttribute('aria-invalid', 'true');
+        valid = false;
+      } else {
+        emailError.style.display = 'none';
+        email.removeAttribute('aria-invalid');
+      }
+
+      // Phone validation
+      const phone = document.getElementById('phone');
+      const phoneError = document.getElementById('phoneError');
+      const phonePattern = /^\d{10}$/;
+      if (!phonePattern.test(phone.value.trim())) {
+        phoneError.style.display = 'block';
+        phone.setAttribute('aria-invalid', 'true');
+        valid = false;
+      } else {
+        phoneError.style.display = 'none';
+        phone.removeAttribute('aria-invalid');
+      }
+
+      // Session validation
+      const session = document.getElementById('session');
+      const sessionError = document.getElementById('sessionError');
+      if (session.value === '') {
+        sessionError.style.display = 'block';
+        session.setAttribute('aria-invalid', 'true');
+        valid = false;
+      } else {
+        sessionError.style.display = 'none';
+        session.removeAttribute('aria-invalid');
+      }
+
+      // Show confirmation if valid
+      if (valid) {
+        document.getElementById('registrationForm').style.display = 'none';
+        document.getElementById('confirmationMessage').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>S.Nandhini Priya Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f7fa;
+      --primary: #2d3142;
+      --accent: #ef8354;
+      --text: #22223b;
+    }
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 2rem 0 1rem 0;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1rem 0;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: grid;
+      gap: 2rem;
+    }
+    section {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(44,49,66,0.07);
+      padding: 2rem;
+    }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary);
+      margin-top: 0;
+    }
+    .about-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      font-size: 1.1rem;
+    }
+    .about-details div {
+      flex: 1 1 200px;
+    }
+    .cert-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .cert-list li {
+      background: var(--bg);
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      border-left: 4px solid var(--accent);
+      font-weight: 600;
+      border-radius: 5px;
+    }
+    @media (max-width: 600px) {
+      main {
+        padding: 0 0.5rem;
+      }
+      .about-details {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      section {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WELCOME TO MY PORTFOLIO</h1>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#certifications">Certifications</a>
+    </nav>
+  </header>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-details">
+        <div><strong>Name:</strong> S.Nandhini Priya</div>
+        <div><strong>Roll No:</strong> 2403A51012</div>
+        <div><strong>Branch:</strong> CSE</div>
+      </div>
+    </section>
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="cert-list">
+        <li>AWS Cloud Certificate</li>
+        <li>AIAC Certificate</li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    // Smooth scrolling for navigation
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

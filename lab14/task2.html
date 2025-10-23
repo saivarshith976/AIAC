@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Display</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .product {
+      max-width: 300px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+      transition: box-shadow 0.3s;
+    }
+
+    .product:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .product__image {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      transition: transform 0.3s;
+    }
+
+    .product:hover .product__image {
+      transform: scale(1.05);
+    }
+
+    .product__title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .product__price {
+      font-size: 1.1rem;
+      color: #2d7a2d;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .product__button {
+      background: #2d7a2d;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .product__button:hover {
+      background: #256025;
+      transform: translateY(-2px) scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .product-list {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product {
+        max-width: 90vw;
+      }
+
+      .product__image {
+        max-width: 90vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="product-list">
+    <div class="product">
+      <img class="product__image" src="https://images.unsplash.com/photo-1513708922410-1b8b6c7a0a8b?auto=format&fit=crop&w=400&q=80" alt="Wireless Headphones" />
+      <div class="product__title">Wireless Headphones</div>
+      <div class="product__price">$59.99</div>
+      <button class="product__button" onclick="addToCart('Wireless Headphones')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img class="product__image" src="https://images.unsplash.com/photo-1606813902914-3b6a5e6c3c3e?auto=format&fit=crop&w=400&q=80" alt="Smart Watch" />
+      <div class="product__title">Smart Watch</div>
+      <div class="product__price">$129.99</div>
+      <button class="product__button" onclick="addToCart('Smart Watch')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img class="product__image" src="https://images.unsplash.com/photo-1585386959984-a415522baf7d?auto=format&fit=crop&w=400&q=80" alt="Bluetooth Speaker" />
+      <div class="product__title">Bluetooth Speaker</div>
+      <div class="product__price">$39.99</div>
+      <button class="product__button" onclick="addToCart('Bluetooth Speaker')">Add to Cart</button>
+    </div>
+    <div class="product">
+  <img class="product__image" src="https://images.unsplash.com/photo-1585386959984-a415522baf7d?auto=format&fit=crop&w=400&q=80" alt="Bluetooth Speaker" />
+  <div class="product__title">Bluetooth Speaker</div>
+  <div class="product__price">$39.99</div>
+  <button class="product__button" onclick="addToCart('Bluetooth Speaker')">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img class="product__image" src="https://images.unsplash.com/photo-1606813902914-3b6a5e6c3c3e?auto=format&fit=crop&w=400&q=80" alt="Smart Watch" />
+  <div class="product__title">Smart Watch</div>
+  <div class="product__price">$129.99</div>
+  <button class="product__button" onclick="addToCart('Smart Watch')">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img class="product__image" src="https://images.unsplash.com/photo-1580910051074-1c1c1e1e1e1e?auto=format&fit=crop&w=400&q=80" alt="Laptop Backpack" />
+  <div class="product__title">Laptop Backpack</div>
+  <div class="product__price">$49.99</div>
+  <button class="product__button" onclick="addToCart('Laptop Backpack')">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img class="product__image" src="https://images.unsplash.com/photo-1585386959984-a415522baf7d?auto=format&fit=crop&w=400&q=80" alt="Portable Charger" />
+  <div class="product__title">Portable Charger</div>
+  <div class="product__price">$24.99</div>
+  <button class="product__button" onclick="addToCart('Portable Charger')">Add to Cart</button>
+</div>
+
+<div class="product">
+  <img class="product__image" src="https://images.unsplash.com/photo-1616627989394-7d3e2f3e3e3e?auto=format&fit=crop&w=400&q=80" alt="Noise Cancelling Earbuds" />
+  <div class="product__title">Noise Cancelling Earbuds</div>
+  <div class="product__price">$89.99</div>
+  <button class="product__button" onclick="addToCart('Noise Cancelling Earbuds')">Add to Cart</button>
+</div>
+  </div>
+
+  <script>
+    function addToCart(productName) {
+      alert(productName + ' added to cart!');
+    }
+  </script>
+</body>
+</html>
