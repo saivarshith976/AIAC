@@ -1,0 +1,21 @@
+post_id,user,post_text,likes,shares,timestamp
+1,user_1,This is a sample POST!!! #fun,20,1,01-01-2025 00:00
+2,user_2,<html>Great Day!</html>,20,3,01-01-2025 06:00
+3,user_3,This is a sample POST!!! #fun,20,1,01-01-2025 12:00
+4,user_4,<html>Great Day!</html>,100,,01-01-2025 18:00
+5,user_5,This is a sample POST!!! #fun,20,5,02-01-2025 00:00
+6,user_6,<html>Great Day!</html>,5,1,02-01-2025 06:00
+7,user_7,This is a sample POST!!! #fun,20,5,02-01-2025 12:00
+8,user_8,<html>Great Day!</html>,10,5,02-01-2025 18:00
+9,user_9,This is a sample POST!!! #fun,5,5,03-01-2025 00:00
+10,user_10,<html>Great Day!</html>,5,5,03-01-2025 06:00
+11,user_11,This is a sample POST!!! #fun,,1,03-01-2025 12:00
+12,user_12,<html>Great Day!</html>,10,3,03-01-2025 18:00
+13,user_13,This is a sample POST!!! #fun,5,5,04-01-2025 00:00
+14,user_14,<html>Great Day!</html>,5,1,04-01-2025 06:00
+15,user_15,This is a sample POST!!! #fun,,5,04-01-2025 12:00
+16,user_16,<html>Great Day!</html>,,1,04-01-2025 18:00
+17,user_17,This is a sample POST!!! #fun,,3,05-01-2025 00:00
+18,user_18,<html>Great Day!</html>,20,3,05-01-2025 06:00
+19,user_19,This is a sample POST!!! #fun,10,,05-01-2025 12:00
+20,user_20,<html>Great Day!</html>,,,05-01-2025 18:00

@@ -1,0 +1,16 @@
+review_id,review_text_clean,rating_norm
+1,amazing movie!,0.8
+2,terrible acting & plot!!!,0.2
+3,amazing movie!,0.8
+4,terrible acting & plot!!!,0.8
+5,amazing movie!,0.5
+6,terrible acting & plot!!!,0.2
+7,amazing movie!,0.8
+8,terrible acting & plot!!!,0.8
+9,amazing movie!,1
+10,terrible acting & plot!!!,0.5
+11,amazing movie!,0.8
+12,terrible acting & plot!!!,0.2
+13,amazing movie!,1
+14,terrible acting & plot!!!,0.8
+15,amazing movie!,0.8
