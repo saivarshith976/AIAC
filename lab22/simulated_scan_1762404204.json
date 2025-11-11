@@ -1,0 +1,32 @@
+{
+  "scan_time": "2025-11-06T10:13:24.590848",
+  "results": [
+    {
+      "target": "192.168.1.21",
+      "timestamp": "2025-11-06T10:13:24.588061",
+      "up": true,
+      "ports": [
+        {
+          "port": 53,
+          "protocol": "tcp",
+          "service": "dns",
+          "state": "open",
+          "banner": "BIND 9.16",
+          "rtt_ms": 9.57
+        },
+        {
+          "port": 3306,
+          "protocol": "tcp",
+          "service": "mysql",
+          "state": "open",
+          "banner": "MySQL 5.7",
+          "rtt_ms": 17.07
+        }
+      ],
+      "summary": {
+        "open_ports": 2,
+        "total_ports_checked": 2
+      }
+    }
+  ]
+}

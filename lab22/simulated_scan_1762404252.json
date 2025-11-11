@@ -1,0 +1,32 @@
+{
+  "scan_time": "2025-11-06T10:14:12.574968",
+  "results": [
+    {
+      "target": "10.0.0.10",
+      "timestamp": "2025-11-06T10:14:12.571962",
+      "up": true,
+      "ports": [
+        {
+          "port": 3306,
+          "protocol": "tcp",
+          "service": "mysql",
+          "state": "filtered",
+          "banner": "",
+          "rtt_ms": null
+        },
+        {
+          "port": 8080,
+          "protocol": "tcp",
+          "service": "http-proxy",
+          "state": "filtered",
+          "banner": "",
+          "rtt_ms": null
+        }
+      ],
+      "summary": {
+        "open_ports": 0,
+        "total_ports_checked": 2
+      }
+    }
+  ]
+}
